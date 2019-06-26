@@ -1,0 +1,7 @@
+{
+  "name": "your-war",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
