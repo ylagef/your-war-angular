@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-icon name="close" (click)="closeModal()" size="large"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">War name</ion-label>
+    <ion-input placeholder="War name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Intervals</ion-label>
+    <ion-input placeholder="Intervals (in minutes)" type="number"></ion-input>
+  </ion-item>
+
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Warriors</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let warrior of warriors">
+      <ion-label>{{warrior}}</ion-label>
+      <ion-button (click)="deleteWarrior(warrior)">
+        <ion-icon name="remove-circle-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-button color="success" fill="outline" (click)="addWarrior()">Add warrior</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
