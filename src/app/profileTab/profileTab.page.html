@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="afAuth.auth.currentUser">
+    <h1>{{afAuth.auth.currentUser.displayName}}</h1>
+  </div>
+
+  <div>
+    <div *ngIf="!afAuth.auth.currentUser">
+      <ion-button (click)="loginGoogle()" expand="full" fill="outline">Login with google</ion-button>
+      <ion-button (click)="loginEmail()" expand="full" fill="outline">Login with email</ion-button>
+    </div>
+
+    <div *ngIf="afAuth.auth.currentUser">
+      <ion-button (click)="logout()" expand="full" color="danger" fill="outline">Logout</ion-button>
+    </div>
+  </div>
+
+</ion-content>

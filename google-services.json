@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "79283339145",
+    "firebase_url": "https://your-war.firebaseio.com",
+    "project_id": "your-war",
+    "storage_bucket": "your-war.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79283339145:android:28455b606525e8b7",
+        "android_client_info": {
+          "package_name": "your.war"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79283339145-p5p2e260rfkbolvkntu72f1opqq7brol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACDJAxvVwNQZALiZYjkYOW7vlVBq-9JyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79283339145-p5p2e260rfkbolvkntu72f1opqq7brol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
