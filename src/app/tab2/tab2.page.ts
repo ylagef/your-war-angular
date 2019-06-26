@@ -9,7 +9,7 @@ import * as firebase from 'firebase/app';
 })
 export class Tab2Page {
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth) {
 
   }
 
