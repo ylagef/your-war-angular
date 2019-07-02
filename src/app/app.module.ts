@@ -1,3 +1,4 @@
+import { DetailWarPage } from './manageTab/detail-war/detail-war.page';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -14,11 +15,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-import { CreateWarPage } from './create-war/create-war.page';
+import { CreateWarPage } from './manageTab/create-war/create-war.page';
 
 @NgModule({
-  declarations: [AppComponent, CreateWarPage],
-  entryComponents: [CreateWarPage],
+  declarations: [AppComponent, DetailWarPage],
+  entryComponents: [DetailWarPage],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

@@ -7,5 +7,38 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="createWar()"  color="success" expand="full">Create new war</ion-button>
+  <div class="createNew">
+    <ion-button (click)="createWar()" color="success" fill="outline" size="small">Create new war</ion-button>
+  </div>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>My wars</ion-label>
+    </ion-list-header>
+    <div *ngIf="myWars.length>0">
+      <ion-item *ngFor="let war of myWars">
+        <ion-label>{{war.payload.get("name")}}</ion-label>
+
+        <ion-button *ngIf="noAcceptedWars.indexOf(war.payload.get('name')+war.payload.get('date'))!=-1" (click)="acceptWar(war)"
+          fill="outline" color="success">
+          Accept
+        </ion-button>
+
+        <ion-button *ngIf="noAcceptedWars.indexOf(war.payload.get('name')+war.payload.get('date'))==-1" (click)="unfollowWar(war)"
+          fill="outline" color="danger">
+          Unfollow
+        </ion-button>
+
+        <ion-button (click)="detailWar(war)" fill="outline">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </div>
+
+    <div *ngIf="myWars.length==0">
+      <ion-item>
+        <ion-label>No wars yet</ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+
 </ion-content>

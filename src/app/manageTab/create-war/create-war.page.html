@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ADD NEW WAR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">War name</ion-label>
+    <ion-input placeholder="War name" [(ngModel)]="war.name" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Intervals</ion-label>
+    <ion-input placeholder="Intervals (in minutes)" type="number" [(ngModel)]="war.intervals" required></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Warriors</ion-label>
+    </ion-list-header>
+
+    <div *ngIf="warriorsAdded.length>0">
+      <ion-item *ngFor="let warrior of warriorsAdded">
+        <ion-label>{{warrior}}</ion-label>
+        <ion-button (click)="deleteWarrior(warrior)" fill="outline" color="danger">
+          <ion-icon name="remove-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </div>
+
+    <div *ngIf="warriorsAdded.length==0">
+      <ion-item class="text-center">
+        <ion-label>No warriors added yet</ion-label>
+      </ion-item>
+    </div>
+
+    <ion-item>
+      <ion-button color="success" fill="outline" (click)="addWarriorByUsername()">Warrior by username</ion-button>
+      <ion-button color="success" fill="outline" (click)="addCustomWarrior()">Custom warrior</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="success" expand="block" (click)="createWar()" class="create">Create</ion-button>
+
+</ion-content>
